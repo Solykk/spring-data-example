@@ -1,5 +1,6 @@
 package com.hub.data.springdataexample.controllers;
 
+import com.hub.data.springdataexample.annotations.MyCustomAnnotation;
 import com.hub.data.springdataexample.domain.entities.First;
 import com.hub.data.springdataexample.services.MiddleCrudService;
 import com.hub.data.springdataexample.services.SimpleCrudService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * @author Dmitriy Lyashenko
  */
+@MyCustomAnnotation(value = "MainController")
 @RestController
 @RequestMapping(value = "/api", produces = "application/json")
 public class MainController {
