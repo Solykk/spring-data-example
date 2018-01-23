@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyCustomAnnotationPostBeanDefinition implements BeanPostProcessor {
 
+
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
         System.out.println(DataUtil.getDescription(o));
