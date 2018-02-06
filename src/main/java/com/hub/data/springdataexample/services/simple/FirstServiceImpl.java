@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Dmitriy Lyashenko
  */
@@ -32,9 +34,9 @@ public class FirstServiceImpl implements SimpleCrudService<First, Long> {
     }
 
     @Override
-    public Iterable<First> readAll() {
+    public List<First> readAll() {
         LOGGER.info("Find all first");
-        return firstRepository.findAll();
+        return (List<First>) firstRepository.findAll();
     }
 
     @Override

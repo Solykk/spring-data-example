@@ -4,7 +4,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AutowiredAnnotationBeanPostProcessorInterceptor extends AutowiredAnnotationBeanPostProcessor {
 
     @Override

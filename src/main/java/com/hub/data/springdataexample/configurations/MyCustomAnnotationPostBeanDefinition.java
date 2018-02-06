@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author Dmitriy Lyashenko
  */
-@Component
+//@Component
 public class MyCustomAnnotationPostBeanDefinition implements BeanPostProcessor {
 
 

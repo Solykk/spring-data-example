@@ -1,6 +1,7 @@
 package com.hub.data.springdataexample.controllers;
 
 import com.hub.data.springdataexample.annotations.MyCustomAnnotation;
+import com.hub.data.springdataexample.domain.dto.FirstDTO;
 import com.hub.data.springdataexample.domain.entities.First;
 import com.hub.data.springdataexample.services.MiddleCrudService;
 import com.hub.data.springdataexample.services.SimpleCrudService;
@@ -9,6 +10,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.stream.Collectors;
 
 /**
  * @author Dmitriy Lyashenko
@@ -28,7 +31,7 @@ public class MainController {
 
     @GetMapping(value = "/firsts")
     public ResponseEntity<?> getAllFirst(){
-        return ResponseEntity.ok(firstCrudService.readAll());
+        return ResponseEntity.ok(firstCrudService.readAll().stream().map(FirstDTO::new).collect(Collectors.toList()));
     }
 
     @GetMapping(value = "/firsts/{id}")
